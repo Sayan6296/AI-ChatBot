@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", 8000))
 DISPLAY_HOST = os.environ.get("APP_HOST", "127.0.0.1")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = "openai/gpt-4o-mini"
@@ -138,5 +138,5 @@ class ChatHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = HTTPServer((HOST, PORT), ChatHandler)
-    print(f"Backend running on http://{DISPLAY_HOST}:{PORT}")
+    print(f"Backend running on port {PORT}")
     server.serve_forever()
