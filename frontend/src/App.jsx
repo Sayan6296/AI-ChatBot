@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
-const API_BASE_URL = '/api'
+const API_BASE_URL = 'https://ai-chatbot-2iim.onrender.com'
 const SESSION_STORAGE_KEY = 'chatbot_session_id'
 const ARCHIVE_STORAGE_KEY = 'chatbot_archived_chats'
 const INITIAL_MESSAGES = [
